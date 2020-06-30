@@ -1,0 +1,61 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d283d887f82dbf312aa86787a9ae6ae9bc5d66b8dcfd30c2b7f22368453621cd
+
+name:           eternal-tree
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/eternal-tree#readme>
+homepage:       https://github.com/githubuser/eternal-tree#readme
+bug-reports:    https://github.com/githubuser/eternal-tree/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/eternal-tree
+
+library
+  exposed-modules:
+      EternalTree
+  other-modules:
+      Paths_eternal_tree
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable eternal-tree-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_eternal_tree
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , eternal-tree
+  default-language: Haskell2010
+
+test-suite eternal-tree-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_eternal_tree
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , eternal-tree
+  default-language: Haskell2010

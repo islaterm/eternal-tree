@@ -16,3 +16,8 @@ Generates a tree with root r and where every child is f(r)
 -}
 itTree :: (a -> [a]) -> a -> Tree a
 itTree f r = Node r (map (itTree f) (f r))
+
+treeTake :: Int -> Int -> Tree a -> Tree a
+treeTake 0 _ (Node x _) = Node x []
+treeTake maxDepth maxLength (Node x ys) =
+  Node x $ take maxLength $ map (treeTake (maxDepth - 1) maxLength) ys
